@@ -29,19 +29,19 @@
     <div id="post_services"></div>
     <script>
         const getElem = document.querySelector("#get_services");
-        const getURL = "http://127.0.0.1:3000/employees/1";
+        const getURL = "http://127.0.0.1:3000/EmployeePayrollDB/1";
         makePromiseCall("GET", getURL, true)
             .then(responseText => getElem.textContent = "Get User Data: " + responseText)
             .catch(error => getElem.textContent = "GET Error Status: " + JSON.stringify(error));
 
         const deleteElem = document.querySelector("#delete_services");
-        const deleteURL = "http://localhost:3000/employees/4";
+        const deleteURL = "http://localhost:3000/EmployeePayrollDB/3";
         makePromiseCall("DELETE", deleteURL, false)
             .then(responseText => deleteElem.textContent = "Delete Data: " + responseText)
             .catch(error => deleteElem.textContent = "Delete Error Status: " + JSON.stringify(error));
 
         const postElem = document.querySelector("#post_services");
-        const postURL = "http://localhost:3000/employees";
+        const postURL = "http://localhost:3000/EmployeePayrollDB";
         const empData = { "name": "Harry", "salary": "5000" };
         makePromiseCall("POST", postURL, true, empData)
             .then(responseText => postElem.textContent = "New User Data: " + responseText)

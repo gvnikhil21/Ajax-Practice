@@ -2,7 +2,7 @@ function makePromiseCall(methodType, url, async = true, data = null) {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
-            console.log(methodType + "State change called. Ready state: " + xhr.readyState + "Status: " + xhr.status);
+            console.log(methodType + " State change called.\nReady state: " + xhr.readyState + "\nStatus: " + xhr.status);
             if (xhr.status === 200 || xhr.status === 201)
                 resolve(xhr.responseText);
             else if (xhr.status >= 400) {
